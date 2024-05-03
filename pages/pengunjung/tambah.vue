@@ -8,7 +8,7 @@
             <input v-model="form.nama" type="text" class="nama form-control form-control-lg rounded-5" placeholder="NAMA...">
           </div>
           <div class="mb-3">
-            <select v-model="form.keanggotaan" class="keanggotaan form-control form-control-lg from-select rounded-5">
+            <select v-model="form.keanggotaan" class="keanggotaan form-control form-control-lg form-select rounded-5">
               <option value="">KEANGGOTAAN</option>
               <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama }}</option>
             </select>
@@ -16,7 +16,7 @@
           <div v-if="form.keanggotaan == 1" class="mb-3">
             <div class="row">
               <div class="col-md-4">
-                <select v-model="form.tingkat" class="tingkat form-control form-control-lg from-select rounded-5 mb-2">
+                <select v-model="form.tingkat" class="tingkat form-control form-control-lg form-select rounded-5 mb-2">
                   <option value="">TINGKAT</option>
                   <option value="X">X</option>
                   <option value="XI">XI</option>
@@ -24,7 +24,7 @@
                 </select>
               </div>
               <div class="col-md-4">
-                <select v-model="form.jurusan" class="jurusan form-control form-control-lg from-select rounded-5 mb-2">
+                <select v-model="form.jurusan" class="jurusan form-control form-control-lg form-select rounded-5 mb-2">
                   <option value="">JURUSAN</option>
                   <option value="PPLG">PPLG</option>
                   <option value="TJKT">TJKT</option>
@@ -34,7 +34,7 @@
                 </select>
               </div>
               <div class="col-md-4">
-                <select v-model="form.kelas" class="kelas form-control form-control-lg from-select rounded-5 mb-2">
+                <select v-model="form.kelas" class="kelas form-control form-control-lg form-select rounded-5 mb-2">
                   <option value="">KELAS</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -45,13 +45,14 @@
             </div>
           </div>
           <div class="mb-3">
-            <select v-model="form.keperluan" class="keperluan form-control form-control-lg from-select rounded-5">
+            <select v-model="form.keperluan" class="form-control form-control-lg form-select rounded-5">
               <option value="">KEPERLUAN</option>
               <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
             </select>
           </div>
           <nuxt-link to="/pengunjung/">
-          <button type="submit" class="btn btn-primary">KIRIM</button></nuxt-link>
+            <button type="submit" class="btn btn-primary">KIRIM</button>
+          </nuxt-link>
         </form>
       </div>
     </div>
@@ -93,5 +94,3 @@ onMounted(() => {
   getKeperluan()
 })
 </script>
-<form @submit.prevent="kirimData">
-</form>

@@ -32,7 +32,8 @@
       </div>
     </div>
     <nuxt-link to="/">
-    <button type="button" class="btn btn-primary">KEMBALI</button></nuxt-link>
+      <button type="button" class="btn btn-primary">KEMBALI</button>
+    </nuxt-link>
   </div>
 </template>
 
