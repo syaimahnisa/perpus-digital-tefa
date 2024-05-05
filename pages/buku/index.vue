@@ -35,9 +35,11 @@ const supabase = useSupabaseClient()
 const keyword = ref("")
 const books = ref([])
 const getBuku = async () => {
-  const { data, error} = await supabase.from('Buku').select('* kategori(*)')
-  if(data) books.value= data
-
+  console.log("test")
+  const { data, error } = await supabase
+    .from('Buku')
+    .select('*')
+  if(data) books.value = data
 }
 onMounted(() => {
   getBuku()
