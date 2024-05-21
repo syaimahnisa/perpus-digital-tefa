@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row my-5">
       <div class="col-lg-6">
-        <nuxt-link to="/pengunjung/tambah">
+        <nuxt-link to="../pengunjung/tambah">
           <div class="card bg-pengunjung rounded-5">
             <div class="card-body">
               <h2>Pengunjung</h2>
@@ -32,7 +32,9 @@
       <div class="col-lg-6">
           <div class="card rounded-5 color1">
             <div class="card-body d-flex justify-content-around d-flex align-items-center">
-              <h2><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
+              <nuxt-link to="../pengunjung/">
+                <h2><span class="no">{{ jml_pengunjung }}</span> pengunjung</h2>
+              </nuxt-link>
               </div>
             </div>
         </div>
@@ -40,7 +42,9 @@
           
             <div class="card rounded-5 color2">
               <div class="card-body d-flex justify-content-around d-flex align-items-center">
-                <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
+                <nuxt-link to="../buku/">
+                  <h2><span class="no">{{ jml_buku }}</span> Buku</h2>
+                </nuxt-link>
               </div>
             </div>            
         </div>

@@ -39,6 +39,7 @@ const getBuku = async () => {
   const { data, error } = await supabase
     .from('Buku')
     .select('*')
+    .ilike('judul', `%${keyword.value}%`)
   if(data) books.value = data
 }
 onMounted(() => {

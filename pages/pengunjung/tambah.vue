@@ -50,9 +50,9 @@
               <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
             </select>
           </div>
-          <nuxt-link to="/pengunjung/">
+
             <button type="submit" class="btn btn-primary">KIRIM</button>
-          </nuxt-link>
+
         </form>
       </div>
     </div>
@@ -74,23 +74,25 @@ const form = ref({
   keperluan: "",
 })
 
-const KirimData = async () => {
+const kirimData = async () => {
+  console.log(form.value)
     const { error } = await supabase.from('pengunjung').insert([form.value])
-    if(!error) navigateTo('/pengunjung')
+    if(!error) navigateTo("/pengunjung")
+    else throw error
   }
 
-const getKeanggotaan = async () => {
+const getkeanggotaan = async () => {
   const { data, error } = await supabase.from('keanggotaan').select('*')
   if(data) members.value = data
 }
 
-const getKeperluan = async () => {
+const getkeperluan = async () => {
   const {data, error } = await supabase.from('keperluan').select('*')
   if(data) objectives.value = data
 }
 
 onMounted(() => {
-  getKeanggotaan()
-  getKeperluan()
+  getkeanggotaan()
+  getkeperluan()
 })
 </script>
