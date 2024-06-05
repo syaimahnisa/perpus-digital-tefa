@@ -20,7 +20,7 @@
             </div>
         </div>
         <NuxtLink to="/buku">
-            <button type="submit" class="btn btn-lg rounded-5 px-5">kembali</button>
+            <button type="submit" class="btn btn-primary">kembali</button>
         </NuxtLink>
     </div>
 </template>
