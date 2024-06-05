@@ -28,7 +28,7 @@
       </div>
     </div>
     <nuxt-link to="/">
-      <button type="submit" class="btn btn-light btn-lg rounded-5 px-5">kembali</button></nuxt-link>
+      <button type="submit" class="btn btn-primary ">kembali</button></nuxt-link>
 </template>
 
 <script setup>
@@ -77,9 +77,6 @@ onMounted(() => {
   object-position: 0 30;
 }
 .form-control {
-  background-color: #D9D9D9;
-}
-.btn {
   background-color: #D9D9D9;
 }
 </style>
