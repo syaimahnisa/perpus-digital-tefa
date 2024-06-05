@@ -12,6 +12,7 @@
             />
           </form>
         </div>
+        <div class="my-3 text-muted">menampilkan {{ books?.length }} dari {{ totalBuku }}</div>
         <div class="row justify-content-evenly">
           <div v-for="(buku, i) in books" :key="i" class="col-lg-2">
           <nuxt-link :to="`/buku/${buku.id}`">
@@ -33,7 +34,8 @@
 <script setup>
 const supabase = useSupabaseClient()
 const keyword = ref("")
-const books = ref([])
+const books = ref([]);
+const totalBuku = ref(0);
 const getBuku = async () => {
   console.log("test")
   const { data, error } = await supabase
@@ -42,11 +44,27 @@ const getBuku = async () => {
     .ilike('judul', `%${keyword.value}%`)
   if(data) books.value = data
 }
+const getTotalBuku = async () => {
+  const { count, error } = await supabase.from("Buku").select("*, kategori_buku(*)", { count: "exact", head: true });
+  if (count) totalBuku.value = count;
+};
+
 onMounted(() => {
   getBuku()
+  getTotalBuku();
 })
 </script>
 <style scoped>
+.shadow-lg {
+  box-shadow: 6px 4px 0 #2e2e2eae !important;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 20px #2e2e2eae !important;
+}
+.card {
+  transition: all .2s ease-in-out;
+}
 .card-body {
   width: 100%;
   height: 30em;
