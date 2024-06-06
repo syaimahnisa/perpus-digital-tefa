@@ -38,6 +38,7 @@ const books = ref([]);
 const totalBuku = ref(0);
 const getBuku = async () => {
   console.log("test")
+  
   const { data, error } = await supabase
     .from('Buku')
     .select('*')
