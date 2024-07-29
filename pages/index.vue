@@ -107,7 +107,10 @@ onMounted(() => {
   background: url(../assets/img/bg-home-cari-buku.jpg) no-repeat center center;
   background-size: cover;
 }
-.box{
-    
+.box {
+  width: 50%;
+}
+.box a{
+  text-decoration: none;
 }
 </style>
