@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row my-5">
-      <div class="col-lg-6">
+      <div class="col-lg-6 box">
         <nuxt-link to="../pengunjung/tambah">
           <div class="card bg-pengunjung rounded-5">
             <div class="card-body">
@@ -11,7 +11,7 @@
         </nuxt-link>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6 box">
         <nuxt-link to="/buku">
           <div class="card bg-buku rounded-5">
             <div class="card-body">
@@ -106,5 +106,8 @@ onMounted(() => {
 .card.bg-buku {
   background: url(../assets/img/bg-home-cari-buku.jpg) no-repeat center center;
   background-size: cover;
+}
+.box{
+    width: 45%;
 }
 </style>
