@@ -107,6 +107,9 @@ onMounted(() => {
   background: url(../assets/img/bg-home-cari-buku.jpg) no-repeat center center;
   background-size: cover;
 }
+.card-body h2{
+    color:black;
+}
 .box {
   width: 50%;
 }
