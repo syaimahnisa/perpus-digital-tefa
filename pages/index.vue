@@ -29,7 +29,7 @@
 
     <div class="container-fluid">
     <div class="row my-5">
-      <div class="col-lg-6">
+      <div class="col-lg-6 box">
           <div class="card rounded-5 color1">
             <div class="card-body d-flex justify-content-around d-flex align-items-center">
               <nuxt-link to="../pengunjung/">
@@ -38,8 +38,7 @@
               </div>
             </div>
         </div>
-        <div class="col-lg-6">
-          
+        <div class="col-lg-6 box">
             <div class="card rounded-5 color2">
               <div class="card-body d-flex justify-content-around d-flex align-items-center">
                 <nuxt-link to="../buku/">
