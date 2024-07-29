@@ -108,6 +108,6 @@ onMounted(() => {
   background-size: cover;
 }
 .box{
-    width: 45%;
+    
 }
 </style>
